@@ -2,49 +2,70 @@ import { AppState } from "../AppState.js"
 
 export class House {
     constructor(data) {
-        this.bedrooms = data.bedrooms
-        this.bathrooms = data.bathrooms
-        this.levels = data.levels
-        this.imgUrl = data.imgUrl
+        this.id = data.id
+        this.owner = data.owner
+        this.street = data.address.street
+        this.aptNum = data.address.apartmentNumber
+        this.city = data.address.city
+        this.city = data.address.city
+        this.state = data.address.state
+        this.zip = data.address.zip
         this.year = data.year
         this.price = data.price
+        this.color = data.color
+        this.levels = data.levels // NOTE make in backend
+        this.imgUrl = data.imgUrl
         this.description = data.description
-        this.creatorId = data.creatorId
-        this.createdAt = data.createdAt || Date()
-    }
+        this.bedrooms = data.spaces.bedrooms
+        this.bathrooms = data.spaces.bathrooms
+        this.playrooms = data.spaces.playrooms
+        this.movierooms = data.spaces.movierooms
+        this.garageSpaces = data.spaces.garageSpaces
+        this.library = data.spaces.library
+        this.backyard = data.spaces.backyard
+        this.porch = data.spaces.porch
+        this.garden = data.spaces.garden
+        this.squareFootage = data.area.squareFootage
+        this.fireplaces = data.details.fireplaces
+        this.fridge = data.details.fridge
+        this.freezer = data.details.freezer
+        this.washer = data.details.washer
+        this.dryer = data.details.dryer
+        this.furnished = data.details.furnished
+        this.description = data.description
 
-    get HousesCardHTMLTemplate() {
+        this.createdAt = data.createdAt || Date()
+
+
+    }
+    get CardHTMLTemplate() {
         return `
-<div class="col-12 mb-3">
-    <div class="row bg-light rounded shadow border border-dark">
-        <div class="col-md-4 px-0">
-            <img
-                src="${this.imgUrl}"
-                alt="House Image" class="img-fluid rounded-start car-picture">
-        </div>
-        <div class="col-md-8 p-3">
-            <h2>${this.price}</h2>
-            <h3>$${this.year}</h3>
-            <h3>Listed on ${this.createdAt.toLocaleDateString()}</h3>
-            <div class="d-flex">
-                <h4>Listed by Owner</h4>
+        <div class="col-12 mb-3">
+        <div class="row bg-light rounded shadow border border-dark">
+            <div class="col-md-4 px-0">
+                <img src="${this.imgUrl}" alt="House Image" class="img-fluid rounded-start car-picture">
             </div>
-            <p>Bedrooms: ${this.bedrooms} Bathrooms:${this.bathrooms}</p>
-            <p>${this.description}</p>
-            <div>
-                ${this.DeleteButton}
+            <div class="col-md-8 p-3">
+                <h3>Address......</h3>
+                <h4>${this.price}</h4>
+                <h5>${this.year}</h5>
+                <p>${this.bedrooms} Bed <br>${this.bathrooms} Bath</p>
+                <p>${this.description}</p>
+                <div class="d-flex">
+                    <h4>Listed by ${this.owner}</h4>
+                </div>
+                <div>
+                    ${this.DeleteButton}
+                </div>
             </div>
         </div>
     </div>
-</div>
-`
+    `
 
     }
 
     get DeleteButton() {
-
-        // NOTE shows delete button only for the creator of the car
-        return `< button onclick = "app.CarsController.removeCar('${this.creatorId}')" class="btn btn-danger" > Delete Car</ > `
+        return `<Button button onclick = "app.HousesController.removeHouse('${this.id}')" class="btn btn-danger"> Delete House</Button> `
     }
 
 }

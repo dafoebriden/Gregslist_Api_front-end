@@ -8,12 +8,11 @@ import { setHTML } from "../utils/Writer.js"
 function _drawHouses() {
     const houses = AppState.houses
     let htmlString = ''
-    houses.forEach(house => htmlString += house.HousesCardHTMLTemplate)
+    houses.forEach(house => htmlString += house.CardHTMLTemplate)
     setHTML('houseListings', htmlString)
 }
 
 function _drawHouseForm() {
-
     const houseFormElement = document.getElementById('houseForm')
     if (!houseFormElement) {
         return
@@ -22,20 +21,17 @@ function _drawHouseForm() {
 
 }
 
-
 export class HousesController {
     constructor() {
         this.getHouses()
-        _drawHouseForm
         _drawHouses
+        _drawHouseForm
         AppState.on('houses', _drawHouses)
-
     }
-
 
     async getHouses() {
         try {
-            await housesService.getHouses
+            await housesService.getHouses()
             Pop.success('Got Houses!')
         } catch (error) {
             console.log(error)

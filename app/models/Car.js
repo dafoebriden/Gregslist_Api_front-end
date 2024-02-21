@@ -5,7 +5,6 @@ export class Car {
     // NOTE data._id and data.id are the same value here
     this.id = data.id || data._id
     this.make = data.make
-    this.model = data.model
     this.imgUrl = data.imgUrl
     this.year = data.year
     this.price = data.price
@@ -36,14 +35,7 @@ export class Car {
         <div class="col-md-8 p-3">
           <h2>${this.year} ${this.make} ${this.model}</h2>
           <h3>$${this.price}</h3>
-          <h3>Listed on ${this.createdAt.toLocaleDateString()}</h3>
-          <div class="d-flex">
-            <h4>Listed by ${this.creator.name}</h4>
-            <img class="creator-picture"
-              src="${this.creator.picture}"
-              alt="${this.creator.name}">
-          </div>
-          <p>ENGINE ${this.engineType} ${this.ColorString}</p>
+          <h3>Listed on ${this.createdAt.toLocaleDateString()}</h
           <p>${this.description}</p>
           <div>
           ${this.DeleteButton}
