@@ -1,0 +1,88 @@
+<div class="container">
+    <section class="row">
+        <div class="col-12">
+            <h1 class="m-3">Houses</h1>
+        </div>
+    </section>
+
+    <section id="houseForm" class="row d-none">
+        <div class="col-12">
+            <form onsubmit="app.HousesController.createHouse()">
+
+                <div class="mb-3">
+                    <label for="housePrice">Price</label>
+                    <input id="housePrice" name="price" type="number" required min="1" max="100000000">
+                </div>
+
+                <div class="mb-3">
+                    <label for="houseLevels">Levels</label>
+                    <input id="houseLevels" name="levels" type="number" required min="1" max="100">
+                </div>
+
+                <div class="mb-3">
+                    <label for="bedrooms">Bedrooms</label>
+                    <!-- NOTE min and max attributes validate the range of a number for an input with type number-->
+                    <input id="bedrooms" name="bedrooms" type="number" required min="1 min" max="25">
+                </div>
+
+                <div class="mb-3">
+                    <label for="bathrooms">Bathrooms</label>
+                    <input id="bathrooms" name="bathrooms" type="number" required min="1" max="25">
+                </div>
+
+                <div class="mb-3">
+                    <label for="homeImgUrl">ImgUrl</label>
+                    <!-- NOTE type url will validate that you are passing a url as a value -->
+                    <input id="homeImgUrl" name="imgUrl" type="url" required maxlength="500">
+                </div>
+
+                <div class="mb-3">
+                    <label for="homeYear">Year</label>
+                    <!-- NOTE color picker that supplies values we can use with css -->
+                    <input type="number" name="year" id="homeYear" min="1900" max="2024">
+                </div>
+
+                <div class="mb-3">
+                    <label for="houseDescription">Description of Home</label>
+                    <!-- NOTE textarea is just a longer text input field -->
+                    <textarea id="houseDescription" name="description" class="w-100" rows="10"
+                        maxlength="500"></textarea>
+                </div>
+
+                <div class="text-end mb-3">
+                    <!-- NOTE important that we have a button with type of submit in order to trigger our onsubmit handler on the top of the form -->
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <section id="houseListings" class="row">
+        <!-- STUB car card template -->
+        <!-- <div class="col-12">
+        <div class="row bg-light rounded shadow border border-dark">
+          <div class="col-md-4 px-0">
+            <img
+              src="https://dealerinspire-image-library-prod.s3.us-east-1.amazonaws.com/images/I3BvjD2zREK0FinQCGoyqYrgkzVq3CNSOH2eNqik.jpg"
+              alt="" class="img-fluid rounded-start car-picture">
+          </div>
+          <div class="col-md-8 p-3">
+            <h2>2004 MAZDA MIATA</h2>
+            <h3>$300</h3>
+            <h3>Listed on 12/12/1200</h3>
+            <div class="d-flex">
+              <h4>Listed by SOME DUDE</h4>
+              <img class="creator-picture"
+                src="https://media0.giphy.com/media/7zApYc8tI0fpsR4Rny/giphy.gif?cid=ecf05e47rjwmcrd6jmfmjmncs5x74gigwtvzhd4hus6b24jt&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="">
+            </div>
+            <p>ENGINE | COLOR</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eius, sed quisquam eaque impedit voluptatem ex
+              pariatur commodi dolorum sapiente.</p>
+  
+          </div>
+        </div>
+      </div> -->
+    </section>
+</div>

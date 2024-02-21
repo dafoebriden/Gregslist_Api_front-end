@@ -1,0 +1,111 @@
+<div class="container">
+    <section class="row">
+        <div class="col-12">
+            <h1 class="m-3">Cars</h1>
+        </div>
+    </section>
+
+    <section id="carForm" class="row d-none">
+        <div class="col-12">
+            <form onsubmit="app.CarsController.createCar()">
+
+                <div class="mb-3">
+                    <!-- NOTE a label's for attribute should match the id of an input tag -->
+                    <label for="carMake">Make</label>
+                    <!-- NOTE name attribute is used to target the values stored within each input -->
+                    <!-- NOTE type attribute dictates the type of input you get -->
+                    <!-- NOTE required attribute validates that the user has filled out an input field before they can submit a form  -->
+                    <!-- NOTE minlength and maxlength will validate that the user inpuuted a string with the correct amount of characters -->
+                    <input id="carMake" name="make" type="text" required maxlength="500">
+                </div>
+
+                <div class="mb-3">
+                    <label for="carModel">Model</label>
+                    <input id="carModel" name="model" type="text" required minlength="1" maxlength="500">
+                </div>
+
+                <div class="mb-3">
+                    <label for="carYear">Year</label>
+                    <!-- NOTE min and max attributes validate the range of a number for an input with type number-->
+                    <input id="carYear" name="year" type="number" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="carPrice">Price</label>
+                    <input id="carPrice" name="price" type="number" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="carImgUrl">ImgUrl</label>
+                    <!-- NOTE type url will validate that you are passing a url as a value -->
+                    <input id="carImgUrl" name="imgUrl" type="url" required maxlength="500">
+                </div>
+
+                <div class="mb-3">
+                    <label for="carColor">Car Color</label>
+                    <!-- NOTE color picker that supplies values we can use with css -->
+                    <input type="color" name="color" id="carColor" value="#e66465" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="carDescription">Description of Car</label>
+                    <!-- NOTE textarea is just a longer text input field -->
+                    <textarea id="carDescription" name="description" class="w-100" rows="10" maxlength="500"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="engineType">Choose an Engine Type:</label>
+
+                    <select id="engineType" name="engineType">
+                        <option value="unknown" selected>Unknown</option>
+                        <option value="2 Stroke">2 Stroke</option>
+                        <option value="4 cylinder">4 cylinder</option>
+                        <option value="v6">v6</option>
+                        <option value="v8">v8</option>
+                        <option value="v10">v10</option>
+                        <option value="v12">v12</option>
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                        <option value="chuncko">chuncko</option>
+                    </select>
+                </div>
+
+
+                <div class="text-end mb-3">
+                    <!-- NOTE important that we have a button with type of submit in order to trigger our onsubmit handler on the top of the form -->
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <section id="carListings" class="row">
+        <!-- STUB car card template -->
+        <!-- <div class="col-12">
+        <div class="row bg-light rounded shadow border border-dark">
+          <div class="col-md-4 px-0">
+            <img
+              src="https://dealerinspire-image-library-prod.s3.us-east-1.amazonaws.com/images/I3BvjD2zREK0FinQCGoyqYrgkzVq3CNSOH2eNqik.jpg"
+              alt="" class="img-fluid rounded-start car-picture">
+          </div>
+          <div class="col-md-8 p-3">
+            <h2>2004 MAZDA MIATA</h2>
+            <h3>$300</h3>
+            <h3>Listed on 12/12/1200</h3>
+            <div class="d-flex">
+              <h4>Listed by SOME DUDE</h4>
+              <img class="creator-picture"
+                src="https://media0.giphy.com/media/7zApYc8tI0fpsR4Rny/giphy.gif?cid=ecf05e47rjwmcrd6jmfmjmncs5x74gigwtvzhd4hus6b24jt&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="">
+            </div>
+            <p>ENGINE | COLOR</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eius, sed quisquam eaque impedit voluptatem ex
+              pariatur commodi dolorum sapiente.</p>
+  
+          </div>
+        </div>
+      </div> -->
+    </section>
+</div>
